@@ -1,0 +1,30 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "create-block/library-info-card",
+  "version": "0.1.0",
+  "title": "Library Info Card",
+  "category": "widgets",
+  "icon": "feedback",
+  "description": "A block to wrap various info cards on St. Olaf's Library Homepage.",
+  "supports": {
+    "html": false
+  },
+  "textdomain": "library-info-card",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "attributes": {
+    "title": {
+      "type": "string",
+      "source": "text",
+      "selector": "div",
+      "default": ""
+    },
+    "bgColor": {
+      "type": "string",
+      "default": "#ffffff"
+    }
+  },
+  "viewScript": "file:./view.js"
+}
