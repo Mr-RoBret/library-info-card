@@ -50,17 +50,23 @@ function Edit({
   const {
     bgColor
   } = attributes;
-  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    class: "library-info-wrapper-div block-editor-block-list__block wp-block wrapper"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", {
-    for: "library-info-wrapper-div",
-    class: "components-placeholder__label"
-  }, "Library Info Card"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InnerBlocks, {
-    template: [['core/html', {
-      placeholder: 'Enter your content here'
-    }]],
-    allowedBlocks: ['core/html', 'core/table', 'core/list']
-  }));
+  const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)({
+    className: 'library-info-wrapper-div'
+  });
+  return (
+    // <div class="library-info-wrapper-div">
+    (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      ...blockProps
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", {
+      for: "library-info-wrapper-div",
+      class: "components-placeholder__label"
+    }, "Library Info Card"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InnerBlocks, {
+      template: [['core/html', {
+        placeholder: 'Enter your content here'
+      }]],
+      allowedBlocks: ['core/html', 'core/table', 'core/list']
+    }))
+  );
 }
 
 /***/ }),

@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { InnerBlocks, InspectorControls, ColorPalette } from '@wordpress/block-editor';
+import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 import { PanelBody, TextControl } from '@wordpress/components';
 
 /**
@@ -21,9 +21,13 @@ import './editor.scss';
 export default function Edit({ attributes, setAttributes }) {
 	// const { attributes, setAttributes } = props;
 	const { bgColor } = attributes;
+	const blockProps = useBlockProps({
+		className: 'library-info-wrapper-div',
+	});
 
 	return (
-		<div class="library-info-wrapper-div block-editor-block-list__block wp-block wrapper">
+		// <div class="library-info-wrapper-div">
+		<div {...blockProps}>
 			<label for="library-info-wrapper-div" class="components-placeholder__label">Library Info Card</label>
 			<InnerBlocks
 				template={[
