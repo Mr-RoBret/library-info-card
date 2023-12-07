@@ -7,6 +7,40 @@
 
 .wp-block-create-block-library-info-card {
 	background-color: #ffffff;
-	color: #000000;
-	padding: 2px;
+	border: 2px solid #53585a;
+	margin: 0 auto;
+}
+
+.library-info-wrapper-div {
+	padding: 1em 0;
+}
+
+h2.wp-block-heading {
+	padding: 4px 8px;
+	color: #fff;
+	margin: 0;
+	background: #53585a;
+	font-size: 1.6rem;
+	font-family: Calluna Sans, sans-serif;
+
+	&:before {
+		content: "\f14c";
+		display: inline-block;
+		margin-right: 5px;
+	}
+}
+
+.dashicons,
+.dashicons-before:before {
+	vertical-align: inherit !important;
+	width: 30px !important;
+	font-size: 1em !important;
+}
+
+.wp-block-table {
+	margin: 0 !important;
+}
+
+.wp-library-info-card-content {
+	margin: 0;
 }

@@ -48,25 +48,29 @@ function Edit({
 }) {
   // const { attributes, setAttributes } = props;
   const {
-    bgColor
+    contentType
   } = attributes;
   const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)({
     className: 'library-info-wrapper-div'
   });
-  return (
-    // <div class="library-info-wrapper-div">
-    (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-      ...blockProps
-    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", {
-      for: "library-info-wrapper-div",
-      class: "components-placeholder__label"
-    }, "Library Info Card"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InnerBlocks, {
-      template: [['core/html', {
-        placeholder: 'Enter your content here'
-      }]],
-      allowedBlocks: ['core/html', 'core/table', 'core/list']
-    }))
-  );
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    ...blockProps
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", {
+    for: "library-info-wrapper-div",
+    class: "components-placeholder__label"
+  }, "Library Info Card"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InnerBlocks, {
+    template: [['core/heading', {
+      placeholder: 'Enter your card\'s title here',
+      // className: 'wp-block-heading',
+      className: 'dashicons-before'
+    }], ['core/html', {
+      placeholder: 'Enter your content here',
+      className: 'wp-block-html'
+    }]],
+    template_lock: "remove"
+
+    // allowedBlocks={['core/html', 'core/table', 'core/list']}
+  }));
 }
 
 /***/ }),
@@ -130,17 +134,14 @@ __webpack_require__.r(__webpack_exports__);
 function save({
   attributes
 }) {
-  // const blockProps = useBlockProps.save();
+  const blockProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps.save();
   // return <div {...blockProps}>{attributes.title}</div>;
   // const { attributes } = props;
   const {
     bgColor
   } = attributes;
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    style: {
-      backgroundColor: bgColor,
-      padding: '20px'
-    }
+    ...blockProps
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InnerBlocks.Content, null));
 }
 
@@ -226,7 +227,7 @@ module.exports = window["wp"]["i18n"];
   \************************/
 /***/ ((module) => {
 
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/library-info-card","version":"0.1.0","title":"Library Info Card","category":"widgets","icon":"feedback","description":"A block to wrap various info cards on St. Olaf\'s Library Homepage.","supports":{"html":false},"textdomain":"library-info-card","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","attributes":{"title":{"type":"string","source":"text","selector":"div","default":""},"bgColor":{"type":"string","default":"#ffffff"}},"viewScript":"file:./view.js"}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/library-info-card","version":"0.1.0","title":"Library Info Card","category":"widgets","icon":"feedback","description":"A block to wrap various info cards on St. Olaf\'s Library Homepage.","supports":{"html":false},"textdomain":"library-info-card","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","attributes":{"contentType":{"type":"string","default":"dashicons-info-outline"}},"viewScript":"file:./view.js"}');
 
 /***/ })
 

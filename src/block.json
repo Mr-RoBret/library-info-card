@@ -15,15 +15,9 @@
 	"editorStyle": "file:./index.css",
 	"style": "file:./style-index.css",
 	"attributes": {
-		"title": {
+		"contentType": {
 			"type": "string",
-			"source": "text",
-			"selector": "div",
-			"default": ""
-		},
-		"bgColor": {
-			"type": "string",
-			"default": "#ffffff"
+			"default": "dashicons-info-outline"
 		}
 	},
 	"viewScript": "file:./view.js"

@@ -20,20 +20,34 @@ import './editor.scss';
  */
 export default function Edit({ attributes, setAttributes }) {
 	// const { attributes, setAttributes } = props;
-	const { bgColor } = attributes;
+	const { contentType } = attributes;
 	const blockProps = useBlockProps({
 		className: 'library-info-wrapper-div',
 	});
 
 	return (
-		// <div class="library-info-wrapper-div">
 		<div {...blockProps}>
 			<label for="library-info-wrapper-div" class="components-placeholder__label">Library Info Card</label>
 			<InnerBlocks
 				template={[
-					['core/html', { placeholder: 'Enter your content here' }],
+					['core/heading',
+						{
+							placeholder: 'Enter your card\'s title here',
+							// className: 'wp-block-heading',
+							className: 'dashicons-before'
+						}
+					],
+					['core/html',
+						{
+							placeholder: 'Enter your content here',
+							className: 'wp-block-html'
+						}
+					]
+
 				]}
-				allowedBlocks={['core/html', 'core/table', 'core/list']}
+				template_lock='remove'
+
+			// allowedBlocks={['core/html', 'core/table', 'core/list']}
 			/>
 
 		</div>
