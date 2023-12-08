@@ -17,7 +17,7 @@
 	"attributes": {
 		"contentType": {
 			"type": "string",
-			"default": "dashicons-info-outline"
+			"default": "wp-block-heading-info"
 		}
 	},
 	"viewScript": "file:./view.js"

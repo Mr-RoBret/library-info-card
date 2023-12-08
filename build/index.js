@@ -50,7 +50,7 @@ function Edit({
     contentType
   } = attributes;
   const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)({
-    className: 'library-info-wrapper-div'
+    className: contentType
   });
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.BlockControls, {
     group: "block",
@@ -66,25 +66,25 @@ function Edit({
       // f14c
       title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Info - Generic", "library-info-card"),
       onClick: () => setAttributes({
-        contentType: 'dashicons-info-outline'
+        contentType: 'wp-block-heading-info'
       })
     }, {
       // f469
       title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Library Hours", "library-info-card"),
       onClick: () => setAttributes({
-        contentType: 'dashicons-clock'
+        contentType: 'wp-block-heading-clock'
       })
     }, {
       // f109
       title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Post", "library-info-card"),
       onClick: () => setAttributes({
-        contentType: 'dashicons-admin-post'
+        contentType: 'wp-block-heading-post'
       })
     }, {
       // f488
-      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Other v2", "library-info-card"),
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Announcements", "library-info-card"),
       onClick: () => setAttributes({
-        contentType: 'dashicons-megaphone'
+        contentType: 'wp-block-heading-megaphone'
       })
     }]
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -96,10 +96,7 @@ function Edit({
     template: [['core/heading', {
       placeholder: 'Enter your card\'s title here',
       // className: 'wp-block-heading',
-      className: 'dashicons-before'
-    }], ['core/html', {
-      placeholder: 'Enter your content here',
-      className: 'wp-block-html'
+      className: contentType + ' dashicons-before'
     }]],
     template_lock: "remove"
 
@@ -172,7 +169,7 @@ function save({
   // return <div {...blockProps}>{attributes.title}</div>;
   // const { attributes } = props;
   const {
-    bgColor
+    contentType
   } = attributes;
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     ...blockProps
@@ -261,7 +258,7 @@ module.exports = window["wp"]["i18n"];
   \************************/
 /***/ ((module) => {
 
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/library-info-card","version":"0.1.0","title":"Library Info Card","category":"widgets","icon":"feedback","description":"A block to wrap various info cards on St. Olaf\'s Library Homepage.","supports":{"html":false},"textdomain":"library-info-card","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","attributes":{"contentType":{"type":"string","default":"dashicons-info-outline"}},"viewScript":"file:./view.js"}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/library-info-card","version":"0.1.0","title":"Library Info Card","category":"widgets","icon":"feedback","description":"A block to wrap various info cards on St. Olaf\'s Library Homepage.","supports":{"html":false},"textdomain":"library-info-card","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","attributes":{"contentType":{"type":"string","default":"wp-block-heading-info"}},"viewScript":"file:./view.js"}');
 
 /***/ })
 

@@ -23,7 +23,7 @@ export default function Edit({ attributes, setAttributes }) {
 	const { contentType } = attributes;
 
 	const blockProps = useBlockProps({
-		className: 'library-info-wrapper-div',
+		className: contentType,
 	});
 
 	return (
@@ -40,22 +40,22 @@ export default function Edit({ attributes, setAttributes }) {
 							{
 								// f14c
 								title: __("Info - Generic", "library-info-card"),
-								onClick: () => setAttributes({ contentType: 'dashicons-info-outline' })
+								onClick: () => setAttributes({ contentType: 'wp-block-heading-info' })
 							},
 							{
 								// f469
 								title: __("Library Hours", "library-info-card"),
-								onClick: () => setAttributes({ contentType: 'dashicons-clock' })
+								onClick: () => setAttributes({ contentType: 'wp-block-heading-clock' })
 							},
 							{
 								// f109
 								title: __("Post", "library-info-card"),
-								onClick: () => setAttributes({ contentType: 'dashicons-admin-post' })
+								onClick: () => setAttributes({ contentType: 'wp-block-heading-post' })
 							},
 							{
 								// f488
-								title: __("Other v2", "library-info-card"),
-								onClick: () => setAttributes({ contentType: 'dashicons-megaphone' })
+								title: __("Announcements", "library-info-card"),
+								onClick: () => setAttributes({ contentType: 'wp-block-heading-megaphone' })
 							},
 
 						]}
@@ -71,16 +71,9 @@ export default function Edit({ attributes, setAttributes }) {
 							{
 								placeholder: 'Enter your card\'s title here',
 								// className: 'wp-block-heading',
-								className: 'dashicons-before'
-							}
-						],
-						['core/html',
-							{
-								placeholder: 'Enter your content here',
-								className: 'wp-block-html'
+								className: contentType + ' dashicons-before'
 							}
 						]
-
 					]}
 					template_lock='remove'
 

@@ -4,7 +4,7 @@ export default function save({ attributes }) {
 	const blockProps = useBlockProps.save();
 	// return <div {...blockProps}>{attributes.title}</div>;
 	// const { attributes } = props;
-	const { bgColor } = attributes;
+	const { contentType } = attributes;
 
 	return (
 		<div {...blockProps}>

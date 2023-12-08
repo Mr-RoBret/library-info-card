@@ -19,7 +19,7 @@
 	padding: 1em 0;
 }
 
-h2.wp-block-heading {
+h2.wp-block-heading-info {
 	padding: 4px 8px;
 	color: #fff;
 	margin: 0;
@@ -29,6 +29,51 @@ h2.wp-block-heading {
 
 	&:before {
 		content: "\f14c";
+		display: inline-block;
+		margin-right: 5px;
+	}
+}
+
+h2.wp-block-heading-clock {
+	padding: 4px 8px;
+	color: #fff;
+	margin: 0;
+	background: #53585a;
+	font-size: 1.6rem;
+	font-family: Calluna Sans, sans-serif;
+
+	&:before {
+		content: "\f469";
+		display: inline-block;
+		margin-right: 5px;
+	}
+}
+
+h2.wp-block-heading-post {
+	padding: 4px 8px;
+	color: #fff;
+	margin: 0;
+	background: #53585a;
+	font-size: 1.6rem;
+	font-family: Calluna Sans, sans-serif;
+
+	&:before {
+		content: "\f109";
+		display: inline-block;
+		margin-right: 5px;
+	}
+}
+
+h2.wp-block-heading-megaphone {
+	padding: 4px 8px;
+	color: #fff;
+	margin: 0;
+	background: #53585a;
+	font-size: 1.6rem;
+	font-family: Calluna Sans, sans-serif;
+
+	&:before {
+		content: "\f488";
 		display: inline-block;
 		margin-right: 5px;
 	}
