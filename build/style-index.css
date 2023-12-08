@@ -13,6 +13,10 @@
   margin: 0 auto;
 }
 
+:where(.wp-block-columns.is-layout-flex) {
+  gap: 1em;
+}
+
 .library-info-wrapper-div {
   padding: 1em 0;
 }
@@ -34,8 +38,10 @@ h2.wp-block-heading:before {
 .dashicons,
 .dashicons-before:before {
   vertical-align: inherit !important;
-  width: 30px !important;
+  width: 1em !important;
   font-size: 1em !important;
+  vertical-align: middle !important;
+  transform: translateY(-5px);
 }
 
 .wp-block-table {
