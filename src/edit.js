@@ -1,6 +1,6 @@
 import { __ } from '@wordpress/i18n';
-import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
-import { PanelBody, TextControl } from '@wordpress/components';
+import { InnerBlocks, useBlockProps, BlockControls } from '@wordpress/block-editor';
+import { ToolbarGroup, DropdownMenu } from '@wordpress/components';
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -19,37 +19,75 @@ import './editor.scss';
  * @return {WPElement} Element to render.
  */
 export default function Edit({ attributes, setAttributes }) {
-	// const { attributes, setAttributes } = props;
+
 	const { contentType } = attributes;
+
 	const blockProps = useBlockProps({
 		className: 'library-info-wrapper-div',
 	});
 
 	return (
-		<div {...blockProps}>
-			<label for="library-info-wrapper-div" class="components-placeholder__label">Library Info Card</label>
-			<InnerBlocks
-				template={[
-					['core/heading',
-						{
-							placeholder: 'Enter your card\'s title here',
-							// className: 'wp-block-heading',
-							className: 'dashicons-before'
-						}
-					],
-					['core/html',
-						{
-							placeholder: 'Enter your content here',
-							className: 'wp-block-html'
-						}
-					]
+		<>
 
-				]}
-				template_lock='remove'
+			<BlockControls group="block" title="Card Type">
+				<ToolbarGroup label="Card Type">
+					<p className="card-type-dropdown-label">Card Type</p>
 
-			// allowedBlocks={['core/html', 'core/table', 'core/list']}
-			/>
+					<DropdownMenu
+						icon="arrow-down"
+						label={__('Card Type', 'library-info-card')}
+						controls={[
+							{
+								// f14c
+								title: __("Info - Generic", "library-info-card"),
+								onClick: () => setAttributes({ contentType: 'dashicons-info-outline' })
+							},
+							{
+								// f469
+								title: __("Library Hours", "library-info-card"),
+								onClick: () => setAttributes({ contentType: 'dashicons-clock' })
+							},
+							{
+								// f109
+								title: __("Post", "library-info-card"),
+								onClick: () => setAttributes({ contentType: 'dashicons-admin-post' })
+							},
+							{
+								// f488
+								title: __("Other v2", "library-info-card"),
+								onClick: () => setAttributes({ contentType: 'dashicons-megaphone' })
+							},
 
-		</div>
+						]}
+					/>
+				</ToolbarGroup>
+			</BlockControls>
+
+			<div {...blockProps}>
+				<label for="library-info-wrapper-div" class="components-placeholder__label">Library Info Card</label>
+				<InnerBlocks
+					template={[
+						['core/heading',
+							{
+								placeholder: 'Enter your card\'s title here',
+								// className: 'wp-block-heading',
+								className: 'dashicons-before'
+							}
+						],
+						['core/html',
+							{
+								placeholder: 'Enter your content here',
+								className: 'wp-block-html'
+							}
+						]
+
+					]}
+					template_lock='remove'
+
+				// allowedBlocks={['core/html', 'core/table', 'core/list']}
+				/>
+
+			</div>
+		</>
 	);
 }

@@ -46,14 +46,48 @@ function Edit({
   attributes,
   setAttributes
 }) {
-  // const { attributes, setAttributes } = props;
   const {
     contentType
   } = attributes;
   const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)({
     className: 'library-info-wrapper-div'
   });
-  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.BlockControls, {
+    group: "block",
+    title: "Card Type"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToolbarGroup, {
+    label: "Card Type"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+    className: "card-type-dropdown-label"
+  }, "Card Type"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.DropdownMenu, {
+    icon: "arrow-down",
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Card Type', 'library-info-card'),
+    controls: [{
+      // f14c
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Info - Generic", "library-info-card"),
+      onClick: () => setAttributes({
+        contentType: 'dashicons-info-outline'
+      })
+    }, {
+      // f469
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Library Hours", "library-info-card"),
+      onClick: () => setAttributes({
+        contentType: 'dashicons-clock'
+      })
+    }, {
+      // f109
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Post", "library-info-card"),
+      onClick: () => setAttributes({
+        contentType: 'dashicons-admin-post'
+      })
+    }, {
+      // f488
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Other v2", "library-info-card"),
+      onClick: () => setAttributes({
+        contentType: 'dashicons-megaphone'
+      })
+    }]
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     ...blockProps
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", {
     for: "library-info-wrapper-div",
@@ -70,7 +104,7 @@ function Edit({
     template_lock: "remove"
 
     // allowedBlocks={['core/html', 'core/table', 'core/list']}
-  }));
+  })));
 }
 
 /***/ }),
