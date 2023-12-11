@@ -1,6 +1,6 @@
 import { __ } from '@wordpress/i18n';
-import { InnerBlocks, useBlockProps, BlockControls } from '@wordpress/block-editor';
-import { ToolbarGroup, DropdownMenu } from '@wordpress/components';
+import { InnerBlocks, useBlockProps, BlockControls, InspectorControls } from '@wordpress/block-editor';
+import { ToolbarGroup, DropdownMenu, PanelBody, SelectControl } from '@wordpress/components';
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -26,9 +26,13 @@ export default function Edit({ attributes, setAttributes }) {
 		className: contentType,
 	});
 
+	// Function to handle icon change
+	const onChangeIcon = (newIcon) => {
+		setAttributes({ contentType: newIcon });
+	};
+
 	return (
 		<>
-
 			<BlockControls group="block" title="Card Type">
 				<ToolbarGroup label="Card Type">
 					<p className="card-type-dropdown-label">Card Type</p>
@@ -59,19 +63,28 @@ export default function Edit({ attributes, setAttributes }) {
 							},
 
 						]}
+						onChange={onChangeIcon}
 					/>
 				</ToolbarGroup>
 			</BlockControls>
 
 			<div {...blockProps}>
+				{/* <div> */}
 				<label for="library-info-wrapper-div" class="components-placeholder__label">Library Info Card</label>
+				<span className={contentType + ' dashicons-before'}
+				>{'add your title here.'}
+				</span>
 				<InnerBlocks
 					template={[
 						['core/heading',
 							{
-								placeholder: 'Enter your card\'s title here',
-								// className: 'wp-block-heading',
-								className: contentType + ' dashicons-before'
+								placeholder: 'Add title here',
+								className: contentType + ' dashicons-before',
+							}
+						],
+						['core/paragraph',
+							{
+								placeholder: 'Add content or block here',
 							}
 						]
 					]}

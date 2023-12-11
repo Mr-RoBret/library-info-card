@@ -52,6 +52,13 @@ function Edit({
   const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)({
     className: contentType
   });
+
+  // Function to handle icon change
+  const onChangeIcon = newIcon => {
+    setAttributes({
+      contentType: newIcon
+    });
+  };
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.BlockControls, {
     group: "block",
     title: "Card Type"
@@ -86,17 +93,21 @@ function Edit({
       onClick: () => setAttributes({
         contentType: 'wp-block-heading-megaphone'
       })
-    }]
+    }],
+    onChange: onChangeIcon
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     ...blockProps
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", {
     for: "library-info-wrapper-div",
     class: "components-placeholder__label"
-  }, "Library Info Card"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InnerBlocks, {
+  }, "Library Info Card"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: contentType + ' dashicons-before'
+  }, 'add your title here.'), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InnerBlocks, {
     template: [['core/heading', {
-      placeholder: 'Enter your card\'s title here',
-      // className: 'wp-block-heading',
+      placeholder: 'Add title here',
       className: contentType + ' dashicons-before'
+    }], ['core/paragraph', {
+      placeholder: 'Add content or block here'
     }]],
     template_lock: "remove"
 

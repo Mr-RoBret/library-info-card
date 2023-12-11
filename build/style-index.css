@@ -10,7 +10,6 @@
 .wp-block-create-block-library-info-card {
   background-color: #ffffff;
   border: 2px solid #53585a;
-  margin: 0 auto;
 }
 
 :where(.wp-block-columns.is-layout-flex) {
@@ -29,7 +28,6 @@ h2.wp-block-heading-info {
   font-size: 1.6rem;
   font-family: Calluna Sans, sans-serif;
 }
-
 h2.wp-block-heading-info:before {
   content: "\f14c";
   display: inline-block;
@@ -44,7 +42,6 @@ h2.wp-block-heading-clock {
   font-size: 1.6rem;
   font-family: Calluna Sans, sans-serif;
 }
-
 h2.wp-block-heading-clock:before {
   content: "\f469";
   display: inline-block;
@@ -59,7 +56,6 @@ h2.wp-block-heading-post {
   font-size: 1.6rem;
   font-family: Calluna Sans, sans-serif;
 }
-
 h2.wp-block-heading-post:before {
   content: "\f109";
   display: inline-block;
@@ -74,7 +70,6 @@ h2.wp-block-heading-megaphone {
   font-size: 1.6rem;
   font-family: Calluna Sans, sans-serif;
 }
-
 h2.wp-block-heading-megaphone:before {
   content: "\f488";
   display: inline-block;
