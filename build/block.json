@@ -18,6 +18,10 @@
     "contentType": {
       "type": "string",
       "default": "wp-block-heading-info"
+    },
+    "headingText": {
+      "type": "string",
+      "default": ""
     }
   },
   "viewScript": "file:./view.js"

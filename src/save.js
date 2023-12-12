@@ -8,9 +8,11 @@ export default function save({ attributes }) {
 
 	return (
 		<div {...blockProps}>
-
+			<h2 className={contentType + ' dashicons-before'}>
+				{attributes.headingText}
+			</h2>
 			<InnerBlocks.Content />
 		</div>
-
 	);
+
 }

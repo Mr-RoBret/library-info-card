@@ -10,6 +10,7 @@
 .wp-block-create-block-library-info-card {
   background-color: #ffffff;
   border: 2px solid #53585a;
+  margin-bottom: 0.5em;
 }
 
 :where(.wp-block-columns.is-layout-flex) {
@@ -78,11 +79,11 @@ h2.wp-block-heading-megaphone:before {
 
 .dashicons,
 .dashicons-before:before {
-  vertical-align: inherit !important;
-  width: 1em !important;
-  font-size: 1em !important;
-  vertical-align: middle !important;
-  transform: translateY(-5px);
+  vertical-align: inherit;
+  width: 1em;
+  font-size: 1em;
+  vertical-align: middle;
+  transform: translateY(-7px);
 }
 
 .wp-block-table {

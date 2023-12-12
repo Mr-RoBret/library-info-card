@@ -20,16 +20,18 @@ import './editor.scss';
  */
 export default function Edit({ attributes, setAttributes }) {
 
-	const { contentType } = attributes;
-
-	const blockProps = useBlockProps({
-		className: contentType,
-	});
+	const { contentType, headingText } = attributes;
 
 	// Function to handle icon change
 	const onChangeIcon = (newIcon) => {
 		setAttributes({ contentType: newIcon });
 	};
+
+	const onChangeHeadingText = (newText) => {
+		setAttributes({ headingText: newText });
+	};
+
+	const blockProps = useBlockProps();
 
 	return (
 		<>
@@ -63,7 +65,7 @@ export default function Edit({ attributes, setAttributes }) {
 							},
 
 						]}
-						onChange={onChangeIcon}
+					// onChange={onChangeIcon}
 					/>
 				</ToolbarGroup>
 			</BlockControls>
@@ -71,17 +73,15 @@ export default function Edit({ attributes, setAttributes }) {
 			<div {...blockProps}>
 				{/* <div> */}
 				<label for="library-info-wrapper-div" class="components-placeholder__label">Library Info Card</label>
-				<span className={contentType + ' dashicons-before'}
-				>{'add your title here.'}
-				</span>
+				<input
+					type='text'
+					placeholder="Add your title here"
+					value={headingText}
+					onChange={(e) => onChangeHeadingText(e.target.value)}
+					className={contentType + ' dashicons-before'}
+				/>
 				<InnerBlocks
 					template={[
-						['core/heading',
-							{
-								placeholder: 'Add title here',
-								className: contentType + ' dashicons-before',
-							}
-						],
 						['core/paragraph',
 							{
 								placeholder: 'Add content or block here',

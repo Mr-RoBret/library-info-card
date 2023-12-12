@@ -22,11 +22,17 @@
 }
 
 .wp-block-create-block-library-info-card input[type=text] {
-  font-family: Gilbert, sans-serif;
-  font-size: 2em;
-  color: inherit;
-  background: inherit;
-  border: 0;
+  padding: 4px 8px;
+  color: #fff;
+  margin: 0;
+  background: #53585a;
+  font-size: 1.6rem;
+  font-family: Calluna Sans, sans-serif;
+}
+.wp-block-create-block-library-info-card input[type=text]:before {
+  content: "\f14c";
+  display: inline-block;
+  margin-right: 5px;
 }
 
 .card-type-dropdown-label {
