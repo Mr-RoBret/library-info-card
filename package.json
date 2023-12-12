@@ -1,6 +1,6 @@
 {
 	"name": "library-info-card",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"description": "A block to wrap various info cards on St. Olaf's Library Homepage.",
 	"author": "Bret Farley",
 	"license": "GPL-2.0-or-later",
