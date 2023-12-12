@@ -22,6 +22,14 @@
 }
 
 .wp-block-create-block-library-info-card input[type=text] {
+	color: #fff;
+	margin: 0;
+	background: #53585a;
+	font-size: 1em;
+	font-family: Calluna Sans, sans-serif;
+}
+
+.wp-block-heading-info {
 	padding: 4px 8px;
 	color: #fff;
 	margin: 0;
@@ -34,6 +42,56 @@
 		display: inline-block;
 		margin-right: 5px;
 	}
+}
+
+.wp-block-heading-clock {
+	padding: 4px 8px;
+	color: #fff;
+	margin: 0;
+	background: #53585a;
+	font-size: 1.6rem;
+	font-family: Calluna Sans, sans-serif;
+
+	&:before {
+		content: "\f469";
+		display: inline-block;
+		margin-right: 5px;
+	}
+}
+
+.wp-block-heading-post {
+	padding: 4px 8px;
+	color: #fff;
+	margin: 0;
+	background: #53585a;
+	font-size: 1.6rem;
+	font-family: Calluna Sans, sans-serif;
+
+	&:before {
+		content: "\f109";
+		display: inline-block;
+		margin-right: 5px;
+	}
+}
+
+.wp-block-heading-megaphone {
+	padding: 4px 8px;
+	color: #fff;
+	margin: 0;
+	background: #53585a;
+	font-size: 1.6rem;
+	font-family: Calluna Sans, sans-serif;
+
+	&:before {
+		content: "\f488";
+		display: inline-block;
+		margin-right: 5px;
+	}
+}
+
+.dashicons,
+.dashicons-before:before {
+	font-size: 1.25em;
 }
 
 .card-type-dropdown-label {

@@ -73,13 +73,15 @@ export default function Edit({ attributes, setAttributes }) {
 			<div {...blockProps}>
 				{/* <div> */}
 				<label for="library-info-wrapper-div" class="components-placeholder__label">Library Info Card</label>
-				<input
-					type='text'
-					placeholder="Add your title here"
-					value={headingText}
-					onChange={(e) => onChangeHeadingText(e.target.value)}
-					className={contentType + ' dashicons-before'}
-				/>
+				<div className={contentType + ' dashicons-before'}>
+					<input
+						type='text'
+						placeholder="Add your title here"
+						value={headingText}
+						onChange={(e) => onChangeHeadingText(e.target.value)}
+
+					/>
+				</div>
 				<InnerBlocks
 					template={[
 						['core/paragraph',
